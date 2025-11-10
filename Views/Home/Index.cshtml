@@ -1,0 +1,38 @@
+﻿﻿@model _24DH112414_MyStore.Models.ViewModel.HomeProductVM
+
+@{
+    ViewBag.Title = "Home Page";
+    <link rel="stylesheet" href="~/Content/SanPham.css" />
+}
+
+@*Phần banner*@
+<section class="container-fluid banner">
+    <div class="banner-contain">
+        <h2>Chào mừng đến với trang wed Truyện Tranh</h2>
+        <p>Mua sắp trực tuyến với nhiều ưu đãi</p>
+        <a href="#" class="btnBanner">Bắt đầu mua sắm</a>
+    </div>
+</section>
+
+@*phần tìm kiếm sản phẩm*@
+<section class="container-fluid searchProd">
+    <h2>Tìm kiếm sản phẩm</h2>
+    @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+    {
+        <div class="form-group search-container">
+            @Html.TextBoxFor(m => m.SearchTerm, new
+       {
+           @class = "search-input",
+           placeholder = "Nhập tên, mô tả sản phẩm..."
+       })
+            <button type="submit" class="search-button">Tìm kiếm</button>
+        </div>
+    }
+</section>
+<hr />
+
+@*Sản phẩm nổi bật*@
+@Html.Partial("PVFeatureProduct", Model)
+
+@*Sản phẩm mới*@
+@Html.Partial("PVNewProduct", Model)
