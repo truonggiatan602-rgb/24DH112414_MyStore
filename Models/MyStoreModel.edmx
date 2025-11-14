@@ -35,6 +35,7 @@
           <Property Name="ShippingDelivery" Type="nvarchar(max)" Nullable="false" />
           <Property Name="DeliveryMethod" Type="nvarchar(max)" />
           <Property Name="PaymentMethod" Type="ntext" />
+          <Property Name="ShippingAddress" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="OrderDetail">
           <Key>
@@ -235,6 +236,7 @@
           <Property Name="ShippingDelivery" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="DeliveryMethod" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="PaymentMethod" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ShippingAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="OrderDetail">
           <Key>
@@ -440,6 +442,7 @@
           <EntitySetMapping Name="Orders">
             <EntityTypeMapping TypeName="MyStoreModel.Order">
               <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="ShippingAddress" ColumnName="ShippingAddress" />
                 <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
                 <ScalarProperty Name="DeliveryMethod" ColumnName="DeliveryMethod" />
                 <ScalarProperty Name="ShippingDelivery" ColumnName="ShippingDelivery" />

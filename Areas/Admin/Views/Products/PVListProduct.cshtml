@@ -4,14 +4,16 @@
     ViewBag.Title = "Index";
 }
 <style>
-    img {
-        height: 200px;
-        max-width: 200px;
+    .table img {
+        height: 80px; 
+        width: auto; 
+        max-width: 100px;
+        object-fit: contain;
     }
 </style>
 @if (Model.Products != null && Model.Products.Any())
 {
-    <h2 style="color:white;" class="bg-success">DANH SÁCH MỤC SẢN PHẨM</h2>
+    <h2 style="color:white;" class="bg-success">DANH SÁCH DACH MỤC SẢN PHẨM</h2>
     <table class="table bg-info col-md-10">
         <tr>
             <th class="bg-success col-md-1">

@@ -1,0 +1,48 @@
+﻿﻿@model IEnumerable<_24DH112414_MyStore.Models.Order>
+@{
+    ViewBag.Title = "Lịch sử đơn hàng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>LỊCH SỬ ĐƠN HÀNG</h2>
+
+@if (Model.Any())
+{
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Mã đơn hàng</th>
+                <th>Ngày đặt</th>
+                <th>Địa chỉ giao hàng</th>
+                <th>Tổng tiền</th>
+                <th>Trạng thái thanh toán</th>
+                <th></th> @* Cột để trống cho nút 'Chi tiết' *@
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model)
+            {
+                <tr>
+                    <td>@order.OrderID</td>
+                    <td>@order.OrderDate.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>@order.ShippingAddress</td>
+                    <td>@order.TotalAmount.ToString("N0") VNĐ</td>
+                    <td>@order.PaymentStatus</td>
+                    <td>
+                        @* Tạo link để xem lại chi tiết đơn hàng *@
+                        @Html.ActionLink("Xem chi tiết",
+                                     "OrderSuccess",
+                                     "Order",
+                                     new { id = order.OrderID },
+                                     new { @class = "btn btn-info" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p class="alert alert-info">Bạn chưa có đơn hàng nào.</p>
+}
+

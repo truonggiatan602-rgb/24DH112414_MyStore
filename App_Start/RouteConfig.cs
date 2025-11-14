@@ -14,6 +14,12 @@ namespace _24DH112414_MyStore
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "CartCheckoutRoute",
+                url: "CartCheckout", 
+                defaults: new { controller = "Order", action = "Checkout" } 
+    );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
