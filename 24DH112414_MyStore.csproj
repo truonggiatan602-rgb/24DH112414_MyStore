@@ -295,7 +295,7 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Cart\Index2.cshtml" />
-    <Content Include="Views\Home\_PVSimilarProduct.cshtml" />
+    <Content Include="Views\Cart\_PVSimilarProduct.cshtml" />
     <Content Include="Views\Order\Checkout.cshtml" />
     <Content Include="Views\Order\OrderHistory.cshtml" />
     <Content Include="Views\Order\OrderSuccess.cshtml" />
