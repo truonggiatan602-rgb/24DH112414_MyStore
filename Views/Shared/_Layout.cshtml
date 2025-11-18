@@ -1,5 +1,4 @@
-﻿﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -7,6 +6,32 @@
     <title>@ViewBag.Title - Tân Store</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
+    <style>
+        /* Đặt màu nền cho toàn bộ trang */
+        body {
+            background-color: #B0E0E6; /* Màu xanh nước biển dịu */
+            font-family: Arial, sans-serif;
+        }
+
+        /* Đặt màu nền cho navbar */
+        .navbar {
+            background-color: #4682B4; /* Màu xanh dương đậm */
+        }
+
+        /* Đặt màu cho các liên kết trong navbar khi hover */
+        .nav-link:hover {
+            color: #FFD700; /* Màu vàng khi hover */
+        }
+
+        /* Tùy chỉnh footer */
+        footer {
+            background-color: #4682B4; /* Màu giống navbar */
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
@@ -29,12 +54,14 @@
                         </li>
                         <li>@Html.ActionLink("Đơn hàng", "OrderHistory", "Order", new { area = "" }, new { @class = "nav-link" })</li>
                         <li>@Html.ActionLink("Đăng xuất", "Logout", "Account", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Đơn hàng", "Order", "OrderHistory", new { area = "" }, new { @class = "nav-link" })</li>
                     }
                     else
                     {
                         // === NẾU CHƯA ĐĂNG NHẬP ===
                         <li>@Html.ActionLink("Đăng nhập", "Login", "Account", new { area = "" }, new { @class = "nav-link" })</li>
                         <li>@Html.ActionLink("Đăng ký", "Register", "Account", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Đơn hàng", "OrderHistory", "Order", new { area = "" }, new { @class = "nav-link" })</li>
                     }
                 </ul>
             </div>
